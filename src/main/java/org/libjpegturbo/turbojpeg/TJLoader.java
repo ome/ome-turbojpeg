@@ -54,6 +54,8 @@ package org.libjpegturbo.turbojpeg;
 
 final class TJLoader {
   static void load() {
-    //System.loadLibrary("turbojpeg");
+    if(System.getProperty("turbojpeg.loadLibrary", "true").equals("true")) {
+      System.loadLibrary("turbojpeg");
+    }
   }
 };
